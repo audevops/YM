@@ -13,7 +13,7 @@ resource "azurerm_public_ip" "DB_pub_IP_1" {
 }
 
 resource "azurerm_network_interface" "DB-nic-1" {
-  name                = "DB-nic_1"
+  name                = "DB-nic_1-YM"
   location            = var.location
   resource_group_name = var.resource_group_name
   ip_configuration {
