@@ -1,7 +1,7 @@
 resource "azurerm_subnet" "DB_sub" {
   name                 = "DB-subnet-YM"
   resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.DB_Vnet.name
+  virtual_network_name = "DB_Vnet"
   address_prefixes     = ["10.0.2.0/24"]
 }
 
