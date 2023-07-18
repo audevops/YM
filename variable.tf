@@ -11,20 +11,20 @@ variable "tenant_id" {
 variable "client_secret" {
   type        = string
   description = "Enter here the subscription id"
-  default     = "d568Q~njcbrfvwQfugtGDBsa1mj6UT6gr7CcQb3Z"
+  default     = "xim8Q~3g0gmmux84qspvfJyADYZc3h9Fx7mx8b6f"
 }
 variable "client_id" {
   type        = string
   description = "Enter here the Client id"
-  default     = "e74ca3cf-dcc1-46ac-afa2-a431cf33cc44"
+  default     = "48b577da-3f59-469e-99cd-29aa636be3ca"
 }
 variable "resource_group_name" {
   type        = string
   description = "Enter here the Resource Group"
-  default     = "1-eff81bca-playground-sandbox"
+  default     = "1-65988734-playground-sandbox"
 }
 variable "location" {
   type        = string
   description = "Enter here the location"
-  default     = "East US"
+  default     = "South Central US"
 }

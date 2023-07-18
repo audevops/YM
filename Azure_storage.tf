@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "example" {
-  name                     = "ymdev"
+  name                     = "ymmdev"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
