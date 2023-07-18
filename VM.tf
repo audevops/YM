@@ -1,18 +1,18 @@
-resource "azurerm_virtual_network" "DB_Vnet" {
+/*resource "azurerm_virtual_network" "DB_Vnet" {
   name                = "DB_Vnet"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
   resource_group_name = var.resource_group_name
-}
+}*/
 
 resource "azurerm_subnet" "DB_sub" {
   name                 = "DB-subnet"
   resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.DB_Vnet.name
+  virtual_network_name = "DB_Vnet"
   address_prefixes     = ["10.0.0.0/24"]
-  depends_on = [
+  /*depends_on = [
      azurerm_virtual_network.DB_Vnet
-  ]
+  ]*/
 }
 
 resource "azurerm_public_ip" "MON_pub_IP_4" {
