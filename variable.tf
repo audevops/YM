@@ -11,12 +11,12 @@ variable "tenant_id" {
 variable "client_secret" {
   type        = string
   description = "Enter here the subscription id"
-  default     = "xim8Q~3g0gmmux84qspvfJyADYZc3h9Fx7mx8b6f"
+  default     = "6pc8Q~ZEt5G0R7GUON~25ywPuf51ZIKdVxtcxb39"
 }
 variable "client_id" {
   type        = string
   description = "Enter here the Client id"
-  default     = "48b577da-3f59-469e-99cd-29aa636be3ca"
+  default     = "99343230-9fc3-4834-81fb-da6f562e04ec"
 }
 variable "resource_group_name" {
   type        = string
