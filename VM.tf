@@ -36,36 +36,36 @@
   }
 
 
-  resource "azurerm_linux_virtual_machine" "MON1" {
-    name                = "MON1"
-    location            = var.location
-    resource_group_name = var.resource_group_name
-    size                = "Standard_D2s_v3"
-    admin_username      = "adminuser"
-    network_interface_ids = [
-      azurerm_network_interface.MON-nic.id,
-    ]
-    admin_password                  = "Proximus#18"
-    disable_password_authentication = false
+    resource "azurerm_linux_virtual_machine" "MON1" {
+      name                = "MON1"
+      location            = var.location
+      resource_group_name = var.resource_group_name
+      size                = "Standard_D2s_v3"
+      admin_username      = "adminuser"
+      network_interface_ids = [
+        azurerm_network_interface.MON-nic.id,
+      ]
+      admin_password                  = "Proximus#18"
+      disable_password_authentication = false
 
-    os_disk {
-      caching              = "ReadWrite"
-      storage_account_type = "Standard_LRS"
-    }
+      os_disk {
+        caching              = "ReadWrite"
+        storage_account_type = "Standard_LRS"
+      }
 
-    source_image_reference {
-      publisher = "Canonical"
-      offer     = "0001-com-ubuntu-server-focal"
-      sku       = "20_04-lts"
-      version   = "latest"
+      source_image_reference {
+        publisher = "Canonical"
+        offer     = "0001-com-ubuntu-server-focal"
+        sku       = "20_04-lts"
+        version   = "latest"
+      }
     }
-  }
-provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y apache2",
-      "sudo ufw allow 'Apache'",
-      "sudo systemctl enable apache2",
-      "sudo systemctl start apache2"
-    ]
-  }
+  provisioner "remote-exec" {
+      inline = [
+        "sudo apt-get update",
+        "sudo apt-get install -y apache2",
+        "sudo ufw allow 'Apache'",
+        "sudo systemctl enable apache2",
+        "sudo systemctl start apache2"
+      ]
+    }
